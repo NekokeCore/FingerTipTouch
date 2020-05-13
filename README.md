@@ -20,4 +20,4 @@ Going to do FocalTechSystems(FTS) touch screen driver
 2.debug
 
 ## Credits
-Screen driver is from imbushuo's [SynapticsTouch](https://github.com/imbushuo/SynapticsTouch).
+Thanks for imbushuo's [SynapticsTouch](https://github.com/imbushuo/SynapticsTouch).
