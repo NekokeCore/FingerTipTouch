@@ -1,5 +1,5 @@
-# FocalTechSystemsTouch
-Going to do FocalTechSystems(FTS) touch screen driver
+# FingerTipTouch
+Going to do FingerTip(FTS) touch screen driver
 
 [![Build Status](https://dev.azure.com/nekokecore/FocalTechSystemsTouch/_apis/build/status/nekokecore.FocalTechSystemsTouch?branchName=master)](https://dev.azure.com/nekokecore/FocalTechSystemsTouch/_build/latest?definitionId=1&branchName=master)
 ![Github](https://img.shields.io/github/last-commit/NekokeCore/FocalTechSystemsTouch)
