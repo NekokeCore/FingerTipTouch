@@ -1,0 +1,83 @@
+; FingerTipTouch.INF
+; Copyright (c) 2000,2011 Microsoft Corporation
+; Copyright (c) 2018,2019 Bingxing Wang
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = HIDClass
+ClassGUID   = {745A17A0-74D3-11D0-B6FE-00A0C90F57DA}
+Provider    = %Provider_Name%
+DriverVer   = 05/01/2019, 19.3
+CatalogFile = FingerTipTouch.cat
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %Installation_Disk%,,,""
+
+[SourceDisksFiles]
+FingerTipTouch.sys  = 1,,
+
+[Manufacturer]
+%Manufacturer_Name% = Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%TchDriver_Device_Desc% = TchDriver_Device.NT, ACPI\MSHW1003
+%TchDriver_Device_Desc% = TchDriver_Device.NT, ACPI\NOKIA_TOUCH
+
+;*****************************************
+; TchDriver client driver Install Section
+;*****************************************
+
+[TchDriver_Device.NT]
+CopyFiles = TchDriver_Device.NT.CopyFiles
+
+[TchDriver_Device.NT.CopyFiles]
+FingerTipTouch.sys
+
+[TchDriver_Device.NT.HW]
+AddReg = FilterInst.NT.HW.AddReg
+
+[FilterInst.NT.HW.AddReg]
+HKR,,"UpperFilters",    %REG_MULTI_SZ%, mshidkmdf
+HKR,,"MultiportDevice", %REG_DWORD%,    0
+
+;-------------- Service installation
+[TchDriver_Device.NT.Services]
+AddService = FingerTipTouch, %SPSVCINST_ASSOCSERVICE%, TchDriver_Service_Inst
+
+; ------------- TchDriver driver install section
+[TchDriver_Service_Inst]
+DisplayName    = %TchDriver_Service_Desc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_DEMAND_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\FingerTipTouch.sys
+LoadOrderGroup = Base
+
+; ------------- Strings section
+[Strings]
+Provider_Name           = "NekokeCore"
+Manufacturer_Name       = "FingerTipTouch"
+Installation_Disk       = "FingerTipTouch Touch Driver Installation Disk"
+TchDriver_Device_Desc   = "FingerTipTouch General Touch Device"
+TchDriver_Service_Desc  = "FingerTipTouch General Touch Driver Service"
+
+; ------------- non-localizable strings
+Configuration           = "Settings"
+ScreenProps             = "SYSTEM\TOUCH\SCREENPROPERTIES"
+DisplaySize             = "SYSTEM\TOUCH\DISPLAYPROPERTIES"
+SPSVCINST_ASSOCSERVICE  = 0x00000002
+SERVICE_KERNEL_DRIVER   = 1
+SERVICE_BOOT_START      = 0
+SERVICE_SYSTEM_START    = 1
+SERVICE_DEMAND_START    = 3
+SERVICE_ERROR_NORMAL    = 1
+SERVICE_ERROR_IGNORE    = 0
+SERVICE_ERROR_CRITICAL  = 3
+REG_EXPAND_SZ           = 0x00020000
+REG_MULTI_SZ            = 0x00010000
+REG_DWORD               = 0x00010001
+REG_SZ                  = 0x00000000

@@ -161,42 +161,42 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>FocalTechSystemsTouch</TargetName>
+    <TargetName>FingerTipTouch</TargetName>
     <IntDir>..\intermediate\$(Platform)\$(ConfigurationName)\</IntDir>
     <IncludePath>$(IntDir);$(SolutionDir)..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>FocalTechSystemsTouch</TargetName>
+    <TargetName>FingerTipTouch</TargetName>
     <IntDir>..\intermediate\$(Platform)\$(ConfigurationName)\</IntDir>
     <IncludePath>$(IntDir);$(SolutionDir)..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <TargetName>FocalTechSystemsTouch</TargetName>
+    <TargetName>FingerTipTouch</TargetName>
     <IntDir>..\intermediate\$(Platform)\$(ConfigurationName)\</IntDir>
     <IncludePath>$(IntDir);$(SolutionDir)..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
-    <TargetName>FocalTechSystemsTouch</TargetName>
+    <TargetName>FingerTipTouch</TargetName>
     <IntDir>..\intermediate\$(Platform)\$(ConfigurationName)\</IntDir>
     <IncludePath>$(IntDir);$(SolutionDir)..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
-    <TargetName>FocalTechSystemsTouch</TargetName>
+    <TargetName>FingerTipTouch</TargetName>
     <IntDir>..\intermediate\$(Platform)\$(ConfigurationName)\</IntDir>
     <IncludePath>$(IntDir);$(SolutionDir)..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <TargetName>FocalTechSystemsTouch</TargetName>
+    <TargetName>FingerTipTouch</TargetName>
     <IntDir>..\intermediate\$(Platform)\$(ConfigurationName)\</IntDir>
     <IncludePath>$(IntDir);$(SolutionDir)..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
-    <TargetName>FocalTechSystemsTouch</TargetName>
+    <TargetName>FingerTipTouch</TargetName>
     <IntDir>..\intermediate\$(Platform)\$(ConfigurationName)\</IntDir>
     <IncludePath>$(IntDir);$(SolutionDir)..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-    <TargetName>FocalTechSystemsTouch</TargetName>
+    <TargetName>FingerTipTouch</TargetName>
     <IncludePath>$(IntDir);$(SolutionDir)..\include;$(IncludePath)</IncludePath>
     <IntDir>..\intermediate\$(Platform)\$(ConfigurationName)\</IntDir>
   </PropertyGroup>
@@ -401,7 +401,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Inf Exclude="@(Inf)" Include="..\src\FocalTechSystemsTouch.inf" />
+    <Inf Exclude="@(Inf)" Include="..\src\FingerTipTouch.inf" />
     <FilesToPackage Include="$(TargetPath)" Condition="'$(ConfigurationType)'=='Driver' or '$(ConfigurationType)'=='DynamicLibrary'" />
   </ItemGroup>
   <ItemGroup>

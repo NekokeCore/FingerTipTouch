@@ -67,7 +67,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Inf Include="..\src\FocalTechSystemsTouch.inf">
+    <Inf Include="..\src\FingerTipTouch.inf">
       <Filter>Driver Files</Filter>
     </Inf>
   </ItemGroup>
